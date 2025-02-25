@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="97BM3K46SO0NGBN7V8U9VQMDK"/>
+<meta name="Time" content="2022-06-22T02:03:44Z"/>
+<meta name="ID" content="CircularCone"/>
+<meta name="User" content="xumi-sawy-ykis-wewa"/>
+<meta name="Problem" content="ext/2012121917ejtxe3hmqcm4bf2euqqw09it4"/>
+<meta name="Elapsed" content="3532 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header tester">Testers</p>
+<div class="tester">
+<p class="item">Running ShapesTester2.java</p>
+<span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><span class="pass">pass </span><pre class="output">
+The Diameter of a Circular Cone with those Dimensions is: 10.40
+<span class="pass">Expected: 10.40</span>
+The Cross Section Area of a Cirular Cone with those Dimensions is: 84.95
+<span class="pass">Expected: 84.95</span>
+The Cross Section Perimeter of a Cirular Cone with those Dimensions is: 32.67
+<span class="pass">Expected: 32.67</span>
+The Surface Area of a Cirular Cone with those Dimensions is: 213.65
+<span class="pass">Expected: 213.65</span>
+The Volume of a Cirular Cone with those Dimensions is: 339.79
+<span class="pass">Expected: 339.79</span>
+
+The Diameter of a Circular Cone with those Dimensions is: 9.80
+<span class="pass">Expected: 9.80</span>
+The Cross Section Area of a Cirular Cone with those Dimensions is: 75.43
+<span class="pass">Expected: 75.43</span>
+The Cross Section Perimeter of a Cirular Cone with those Dimensions is: 30.79
+<span class="pass">Expected: 30.79</span>
+The Surface Area of a Cirular Cone with those Dimensions is: 144.41
+<span class="pass">Expected: 144.41</span>
+The Volume of a Cirular Cone with those Dimensions is: 201.15
+<span class="pass">Expected: 201.15</span>
+
+The Diameter of a Cylinder with those Dimensions is: 16.00
+<span class="pass">Expected: 16.00</span>
+The Cross Section Area of a Cylinder with those Dimensions is: 201.06
+<span class="pass">Expected: 201.06</span>
+The Cross Section Perimeter of a Cylinder with those Dimensions is: 50.27
+<span class="pass">Expected: 50.27</span>
+The Surface Area of a Cylinder with those Dimensions is: 1055.58
+<span class="pass">Expected: 1055.58</span>
+The Volume of a Cylinder with those Dimensions is: 2613.81
+<span class="pass">Expected: 2613.81</span>
+
+The Diameter of a Cylinder with those Dimensions is: 12.40
+<span class="pass">Expected: 12.40</span>
+The Cross Section Area of a Cylinder with those Dimensions is: 120.76
+<span class="pass">Expected: 120.76</span>
+The Cross Section Perimeter of a Cylinder with those Dimensions is: 38.96
+<span class="pass">Expected: 38.96</span>
+The Surface Area of a Cylinder with those Dimensions is: 673.93
+<span class="pass">Expected: 673.93</span>
+The Volume of a Cylinder with those Dimensions is: 1340.47
+<span class="pass">Expected: 1340.47</span>
+</pre>
+</div>
+<p class="header checkStyle">CheckStyle</p>
+<div class="checkStyle">
+<pre class="output">Starting audit...
+Audit done.
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">CircularCone.java:</p>
+<pre class="output">//Add class comment and @tags
+/** @author larissa
+ *  @version 6/21/22
+ **/ 
+public class CircularCone extends CircularShapeWithHeight 
+{
+    /** This is circular cone constructor
+     *  @param radius this is radius parameter
+     *  @param height this is height parameter
+    **/
+    public CircularCone (double radius, double height){
+        super(radius,height);
+    }
+    
+    /** This is circular cone method **/
+    public CircularCone(){
+        super(0 ,0);
+    }
+    
+    /** This is get volume method 
+     *  @return height area this return height and area of cone
+    **/
+    @Override
+    public double getVolume() {
+        return (1 * getHeight() * getCrossSectionArea())/3;
+    }
+    
+    /** This is get surface area method  
+     *  @return radius height this return radius and height of cone
+    **/
+    @Override
+    public double getSurfaceArea() {
+        return Math.PI * getRadius() * Math.sqrt((getRadius() * getRadius())+ (getHeight() * getHeight()));
+    }
+}
+</pre>
+<p class="caption">CircularShapeWithHeight.java:</p>
+<pre class="output">//Add class comment and @tags
+/** @author larissa
+ *  @version 6/21/22
+ **/ 
+public abstract class CircularShapeWithHeight implements Shape3D
+{
+    private double radius;
+    private double height;
+
+    /** This is circular shape with heihht constructor
+     *  @param radius this is parameter radius
+     *  @param height this is parameter height
+    **/
+    public CircularShapeWithHeight(double radius, double height) {
+        this.radius = radius;
+        this.height = height;
+    }
+
+    /** This is get diameter method 
+     *  @return diameter this return diameter of circle
+    **/
+    public double getDiameter(){
+        return 2 * this.radius;
+    }
+    
+    /** This is get radius method 
+     *  @return radius this return radius of circle
+    **/
+    public double getRadius(){
+        return this.radius;
+    }
+    
+    /** This is get height method 
+     *  @return height this return height of cone
+    **/
+    public double getHeight(){
+        return this.height;
+    }
+    
+    /** This is set radius method 
+     *  @param radius this is parameter radius
+    **/
+    public void setRadius (double radius){
+        this.radius = radius;
+    }
+    
+    /** This is set height method 
+     *  @param height this is parameter height
+    **/
+    public void setHeight (double height){
+        this.height = height;
+    }
+
+    /** This is get area method 
+     *  @return area this return area of circle
+    **/
+    public double getCrossSectionArea(){
+        return Math.PI * getRadius() * getRadius();
+    }
+    
+    /** This is get perimeter method 
+     *  @return perimeter this return perimeter of circle
+    **/
+    public double getCrossSectionPerimeter(){
+        return 2 * Math.PI * getRadius();
+    }
+}
+</pre>
+<p class="caption">Cylinder.java:</p>
+<pre class="output">// Add class comment and @tags
+/** @author larissa
+ *  @version 6/21/22
+ **/ 
+
+public class Cylinder extends CircularShapeWithHeight 
+{
+    /** This is cylinder constructor
+     *  @param radius this is radius parameter
+     *  @param height this is height parameter
+    **/
+    public Cylinder (double radius, double height){
+        super(radius, height);
+    }
+    /** This is cylinder method **/
+    public Cylinder(){
+        super(0,0);
+    }
+    
+    /** This is get volume method 
+     *  @return height area this return height and area of cone
+    **/
+    @Override
+    public double getVolume() {
+        return getHeight() * getCrossSectionArea();
+    }
+    
+    /** This is get surface area method  
+     *  @return perimeter height area this return perimeter, height, and area of cone
+    **/
+    public double getSurfaceArea(){
+        return getCrossSectionPerimeter() * getHeight() + 2 * getCrossSectionArea();
+    }
+}
+</pre>
+<p class="caption">Shape3D.java:</p>
+<pre class="output">// Add class comment and @tags
+/** @author larissa
+ *  @version 6/21/22
+ **/ 
+public interface Shape3D 
+{
+    /** This get volume method
+     *  @return volume
+    **/
+    public double getVolume();
+    
+    /** This get surface method 
+     *  @return surface area
+    **/
+    public double getSurfaceArea();
+}
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">21/21</p>
+</div>
+<div class="footnotes"><div class="footnote">2022-06-22T02:03:44Z</div>
+</div>
+</body></html>
